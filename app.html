@@ -3,15 +3,16 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Impact Todo</title>
-  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" href="./asset/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./style/index.css">
 </head>
 
 <body>
   <header>
     <div class="logo">
-      <img src="./assets/images/logo.png" alt="impact logo" width="100px">
+      <img src="./asset/images/logo.png" alt="impact logo" width="100px">
     </div>
     <div class="head">
       <h1>IMPACT TODO</h1>
@@ -20,9 +21,9 @@
   </header>
 
   <nav>
-      <a class="nav-list" href="index.html">Home</a>
-      <a class="nav-list" href="app.html">App</a>
-      <a class="nav-list" href="about.html">About</a>
+    <a class="nav-list" href="index.html">Home</a>
+    <a class="nav-list" href="app.html">App</a>
+    <a class="nav-list" href="about.html">About</a>
   </nav>
 
   <br>
@@ -31,29 +32,18 @@
     <div class="app">
       <div>
         <form>
-          <input class="input-text" type="text" placeholder="what do you want to do?">
-          <button class="input-button" type="button">Add</button>
+          <div class="search-feature">
+            <input id="search-text" type="text" placeholder="search your to do here...">
+            <button id="search-button" type="button" onclick="searchText()"><img src="./asset/images/search.png"></button>
+          </div>
+          <div class="create-feature">
+            <input id="input-text" type="text" placeholder="what do you want to do?">
+            <button id="add-button" type="button" onclick="createText()">Add</button>
+          </div>
         </form>
-
-        <br>
-
-        <div class="output">
-          <div class="list">
-            <span>Browse internet about how to be a programmer</span>
-            <button class="delete-button" type="button">X</button>
-          </div>
-          <div class="list">
-            <span>Learn basic programming language</span>
-            <button class="delete-button" type="button">X</button>
-          </div>
-          <div class="list">
-            <span>Join Impact Byte Bootcamp in Jakarta</span>
-            <button class="delete-button" type="button">X</button>
-          </div>
-      </div>
-
-      </div>
-    </div>
+        <div id="output-box" class="output-box"></div>
+        <div>
+        </div>
   </main>
 
   <footer>
@@ -63,9 +53,10 @@
     </div>
   </footer>
 
-  <script src="./assets/js/jquery-slim.min.js"></script>
-  <script src="./assets/js/popper.min.js"></script>
-  <script src="./assets/js/bootstrap.min.js"></script>
+  <script src="./asset/js/jquery-slim.min.js"></script>
+  <script src="./asset/js/popper.min.js"></script>
+  <script src="./asset/js/bootstrap.min.js"></script>
+  <script src="./script/app.js" charset="utf-8"></script>
 </body>
 
 </html>

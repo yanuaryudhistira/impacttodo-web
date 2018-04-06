@@ -1,6 +1,8 @@
+/* index.html -------------------------------------------------------------- */
+
 @font-face {
   font-family: "Black Jack";
-  src: url("./assets/fonts/BLACKJAR.TTF") format("truetype");
+  src: url("../asset/fonts/BLACKJAR.TTF") format("truetype");
 }
 
 Body {
@@ -60,11 +62,11 @@ main {}
 }
 
 .input-form label {
-  width:180px;
-  clear:left;
-  text-align:right;
-  padding-right:10px;
-  float:left;
+  width: 180px;
+  clear: left;
+  text-align: right;
+  padding-right: 10px;
+  float: left;
 }
 
 .input-form input {
@@ -74,8 +76,8 @@ main {}
 }
 
 .input-form button {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .form-container {
@@ -91,60 +93,100 @@ main {}
   margin-top: 0;
 }
 
+/* app.html----------------------------------------------------------------- */
+
 .app {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.input-text {
+.search-feature {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+#search-text {
+  padding-left: 5px;
   border-style: solid;
-  border-color: red;
+  border-color: black;
   width: 447px;
   height: 30px;
 }
 
-.input-text:focus {
+#search-button {
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  width: 50px;
+  margin-left: 3px;
+  height: 30px;
+}
+
+.create-feature {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+#input-text {
+  border-style: solid;
+  border-color: red;
+  width: 447px;
+  height: 30px;
+  padding-left: 5px;
+}
+
+#input-text:focus {
   background-color: #f2f2f2;
 }
 
-.input-button {
+#add-button {
   background-color: red;
   border-style: solid;
   border-color: red;
   color: white;
   width: 50px;
+  margin-left: 3px;
 }
 
-.output {
+#output-box {
   display: inline-block;
   border-style: solid;
   border-color: red;
-  border-width: 2px
-  padding: 2px;
+  border-width: 2px padding: 2px;
   height: 400px;
   width: 500px;
 }
 
-.list {
+#output-box div {
   border: 1px solid black;
+  margin: 2px;
+  padding: 0px;
   background-color: #f2f2f2;
-  margin: 5px;
-  padding: 5px;
 }
 
-.delete-button {
+.list {
+  margin: 5px;
+  padding: 2px;
+}
+
+#update-button {
+  padding-top: 0px;
   margin-right: auto;
   float: right;
-  background-color: transparent;
-  border-color: transparent;
-  color: #bdbdbd;
-  font-weight: bold;
+}
+
+#delete-button {
+  padding-top:0px;
+  margin-right: auto;
+  float: right;
 }
 
 .delete-button:hover {
   background-color: white;
 }
+
+/* about.html--------------------------------------------------------------- */
 
 .about-introduction {
   margin-top: 25px;
