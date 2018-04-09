@@ -23,8 +23,8 @@ function displayOutput() {
     let newDiv = document.createElement('div');
     newDiv.innerHTML = `
       <span class="list">${todoArr[i]}</span>
-      <img src="./asset/images/delete.png" width="20px" class="list" id="delete-button" onclick="deleteText()">
-      <img src="./asset/images/update.png" width="20px" class="list" id="update-button" onclick="updateText()">
+      <img src="./asset/images/delete.png" width="20px" class="list" id="delete-button" onclick="deleteText(${i})">
+      <img src="./asset/images/update.png" width="20px" class="list" id="update-button" onclick="updateText(${i})">
     `;
     outputBox.appendChild(newDiv);
   };
