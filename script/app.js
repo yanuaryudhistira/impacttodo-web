@@ -1,15 +1,28 @@
 // create & read feature--------------------------------------------------------
-let lookText = document.getElementById("search-text");
+let getText = document.getElementById("get-text");
 let inputText = document.getElementById("input-text");
 let outputBox = document.getElementById("output-box");
-let initArr = [];
+
+function getFromStorage() {
+  if (localStorage.todoList) {
+    return JSON.parse(localStorage.todoList);
+  } else {
+    localStorage.todoList = "[]";
+    return [];
+  }
+}
+
+function setToStorage(todoArr) {
+  localStorage.todoList = JSON.stringify(todoArr);
+}
 
 function displayOutput() {
   outputBox.innerHTML = "";
-  for (var i = 0; i < initArr.length; i++) {
-    var newDiv = document.createElement('div');
+  let todoArr = getFromStorage();
+  for (var i = 0; i < todoArr.length; i++) {
+    let newDiv = document.createElement('div');
     newDiv.innerHTML = `
-      <span class="list">${initArr[i]}</span>
+      <span class="list">${todoArr[i]}</span>
       <img src="./asset/images/delete.png" width="20px" class="list" id="delete-button" onclick="deleteText()">
       <img src="./asset/images/update.png" width="20px" class="list" id="update-button" onclick="updateText()">
     `;
@@ -17,20 +30,41 @@ function displayOutput() {
   };
 };
 
-if (localStorage.todoList) {
-  initArr = JSON.parse(localStorage.todoList);
-  displayOutput();
+function createText() {
+  if (inputText.value !== "") {
+    let todoArr = getFromStorage();
+    todoArr.push(inputText.value);
+    setToStorage(todoArr);
+    displayOutput();
+    inputText.value="";
+  } else {
+    alert("please input your to do");
+  }
 };
 
-function createText() {
-  initArr.push(inputText.value);
-  localStorage.todoList = JSON.stringify(initArr);
+// update feature---------------------------------------------------------------
+function updateText(index) {
+  let todoArr = getFromStorage();
+  let getPrompt = prompt('Update Text');
+  todoArr[index] = getPrompt;
+  setToStorage(todoArr);
   displayOutput();
 };
 
 // delete feature---------------------------------------------------------------
 function deleteText(index) {
-  initArr.splice(index, 1);
-  localStorage.todoList = JSON.stringify(initArr);
+  let todoArr = getFromStorage();
+  todoArr.splice(index, 1);
+  setToStorage(todoArr);
   displayOutput();
 };
+
+// search feature---------------------------------------------------------------
+function searchText() {
+  let todoArr = getFromStorage();
+  let lowerText = getText.value.toLowerCase();
+  let findText = todoArr.filter(word => word.toLowerCase().includes(lowerText));
+  alert(findText.join(', '));
+};
+
+displayOutput();

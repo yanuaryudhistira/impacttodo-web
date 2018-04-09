@@ -106,7 +106,7 @@ main {}
   margin-bottom: 5px;
 }
 
-#search-text {
+#get-text {
   padding-left: 5px;
   border-style: solid;
   border-color: black;
@@ -180,10 +180,6 @@ main {}
   padding-top:0px;
   margin-right: auto;
   float: right;
-}
-
-.delete-button:hover {
-  background-color: white;
 }
 
 /* about.html--------------------------------------------------------------- */
